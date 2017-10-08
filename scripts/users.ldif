@@ -1,0 +1,6 @@
+
+#user
+dn: dc=lizo,dc=ldaputh,dc=com
+cn: lizo
+objectClass: top
+objectClass domain
