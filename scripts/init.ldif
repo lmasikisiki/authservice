@@ -1,0 +1,9 @@
+# Add User to start off with
+dn: dc=ldapauth,dc=com
+objectclass: dcObject
+objectclass: organization
+dc:ldapauth
+
+dn: cn=manager,dc=ldapauth,dc=com
+objectclass: organizationalRole
+cn: manager

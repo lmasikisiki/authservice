@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 
 # cd /app/db-6.2.32/build_unix && ../dist/configure --prefix=/usr  \
 #                   --enable-compat185 \
@@ -20,6 +20,7 @@
 # rm -r -f /app/openldap-*
 
 #Run ldap
-usr/local/libexec/slapd
-ps -ef
+/usr/local/libexec/slapd
+
 wait
+ 

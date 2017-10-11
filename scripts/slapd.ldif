@@ -1,0 +1,13 @@
+
+# slap.ldif
+dn: olcDatabase=mdb,cn=config
+objectClass: olcDatabaseConfig
+objectClass: olcMdbConfig
+olcDatabase: mdb
+OlcDbMaxSize: 1073741824
+olcSuffix: dc=ldapauth,dc=com
+olcRootDN: cn=manager,dc=ldapauth,dc=com
+olcRootPW: lizo90
+olcDbDirectory: /usr/local/var/openldap-data
+olcDbIndex: objectClass eq
+
