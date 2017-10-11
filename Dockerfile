@@ -1,14 +1,14 @@
-FROM nimmis/alpine-java
+FROM alpine-java
 
-RUN apk  --no-cache update 
+# RUN apk  --no-cache update 
 
-RUN apk --no-cache -Uuv add groff \
-        util-linux \
-        make \
-        bash \
-        alpine-sdk \ 
-        tar && \
-        rm -R /var/cache/apk/  
+# RUN apk --no-cache -Uuv add groff \
+#         util-linux \
+#         make \
+#         bash \
+#         alpine-sdk \ 
+#         tar && \
+#         rm -R /var/cache/apk/  
 
 RUN mkdir /app
 
@@ -40,22 +40,11 @@ EXPOSE 389
 RUN rm -R  /app/db-* /app/openldap-*
 
 COPY /scripts/ /app/scripts
-
-RUN cat /app/scripts/ldap.conf > /usr/local/etc/openldap/ldap.conf
-
-RUN cat /app/scripts/ldap.conf > /usr/local/etc/openldap/ldap.conf.default
-
-RUN cat /app/scripts/slapd.conf > /usr/local/etc/openldap/slapd.conf
-
-RUN cat /app/scripts/slapd.conf > /usr/local/etc/openldap/slapd.conf.default
-
-RUN cat /app/scripts/slapd.ldif > /usr/local/etc/openldap/slapd.ldif
-
-RUN cat /app/scripts/slapd.ldif > /usr/local/etc/openldap/slapd.ldif.default
  
 COPY entrypoint.sh /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh
 
-ENTRYPOINT /app/entrypoint.sh
+CMD /app/entrypoint.sh
+ 
  

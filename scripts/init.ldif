@@ -2,6 +2,7 @@
 dn: dc=ldapauth,dc=com
 objectclass: dcObject
 objectclass: organization
+o: ldapauth.org
 dc:ldapauth
 
 dn: cn=manager,dc=ldapauth,dc=com
