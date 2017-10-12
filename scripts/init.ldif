@@ -1,0 +1,57 @@
+# Add User to start off with
+dn: dc=ldapauth,dc=com
+objectclass: dcObject
+objectclass: organization
+o: ldapauth.org
+dc:ldapauth
+
+dn: cn=manager,dc=ldapauth,dc=com
+objectclass: organizationalRole
+cn: manager
+
+# Organizations
+dn: o=IT,dc=ldapauth,dc=com
+objectClass: top
+objectClass: organization
+o: IT
+
+#Organizational Unit
+dn: ou=IT-Sec,o=IT,dc=ldapauth,dc=com
+ou: IT-Sec
+objectClass: top
+objectClass: organizationalUnit
+
+# Add OU Groups
+dn: ou=people,ou=IT-Sec,o=IT,dc=ldapauth,dc=com
+ou: people
+objectClass: top
+objectClass: organizationalUnit
+
+
+dn: ou=roles,ou=IT-Sec,o=IT,dc=ldapauth,dc=com
+ou: roles
+objectClass: top
+objectClass: organizationalUnit
+
+# Role 1
+dn: cn=admin,ou=roles,ou=IT-Sec,o=IT,dc=ldapauth,dc=com
+cn: admin
+objectClass: top
+objectClass: groupOfNames
+member: cn=manager,dc=ldapauth,dc=com
+
+# Role 2
+dn: cn=user,ou=roles,ou=IT-Sec,o=IT,dc=ldapauth,dc=com
+cn: user
+objectClass: top
+objectClass: groupOfNames
+member: cn=manager,dc=ldapauth,dc=com
+
+# Test: first init user
+dn: cn=lizom,ou=people,ou=IT-Sec,o=IT,dc=ldapauth,dc=com
+sn: Masikisiki
+cn: lizom
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+
