@@ -10,6 +10,7 @@ cat /app/scripts/ldap.conf > /usr/local/etc/openldap/ldap.conf && \
 #Run ldap
 /usr/local/libexec/slapd
 
+# Add init organizations, groups and users
 ldapadd -x -H ldap:// -D "cn=manager,dc=ldapauth,dc=com" -w lizo90  -f /app/scripts/init.ldif
 
 # for now, run an infinit loop to keep the container running

@@ -1,14 +1,14 @@
-FROM alpine-java
+FROM nimmis/alpine-java
 
-# RUN apk  --no-cache update 
+RUN apk  --no-cache update 
 
-# RUN apk --no-cache -Uuv add groff \
-#         util-linux \
-#         make \
-#         bash \
-#         alpine-sdk \ 
-#         tar && \
-#         rm -R /var/cache/apk/  
+RUN apk --no-cache -Uuv add groff \
+        util-linux \
+        make \
+        bash \
+        alpine-sdk \ 
+        tar && \
+        rm -R /var/cache/apk/  
 
 RUN mkdir /app
 
