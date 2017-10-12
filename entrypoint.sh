@@ -9,9 +9,11 @@ cat /app/scripts/ldap.conf > /usr/local/etc/openldap/ldap.conf && \
         cat /app/scripts/slapd.ldif > /usr/local/etc/openldap/slapd.ldif.default
 #Run ldap
 /usr/local/libexec/slapd
-
-# Add init organizations, groups and users
+#Sleep
+sleep 1
+#Test Connection 
+ldapsearch -x -H ldap://
+#Add Init users,groups and organizations
 ldapadd -x -H ldap:// -D "cn=manager,dc=ldapauth,dc=com" -w lizo90  -f /app/scripts/init.ldif
-
 # for now, run an infinit loop to keep the container running
 while :; do sleep 1; done;
