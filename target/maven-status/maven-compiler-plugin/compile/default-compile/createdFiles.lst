@@ -1,5 +1,0 @@
-com/ldapauth/authprovider/AuthproviderApplication.class
-com/ldapauth/authprovider/OAuth2SecurityConfiguration.class
-com/ldapauth/authprovider/AuthorizationServerConfiguration.class
-com/ldapauth/authprovider/ResourceServerConfiguration.class
-com/ldapauth/authprovider/SecurityConfig.class
